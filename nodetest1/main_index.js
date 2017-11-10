@@ -1,8 +1,9 @@
-var fs = require('fs');
-var url = require('url');
-
-exports.goIndex = function (res, req) {
-    var readPath = __dirname + '/' + url.parse('index.html').pathname;
+/* 处理首页逻辑信息 */
+var fs    = require('fs'),
+    url   = require('url');
+exports.goIndex = function(res, req){
+    var readPath = __dirname + '/' +url.parse('index.html').pathname;
     var indexPage = fs.readFileSync(readPath);
-    res.end(indexPage)
+    /* 返回 */
+    res.end(indexPage);
 }
